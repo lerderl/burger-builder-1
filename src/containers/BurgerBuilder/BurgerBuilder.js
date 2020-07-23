@@ -25,11 +25,11 @@ class BurgerBuilder extends Component {
 
     componentDidMount() {
         console.log(this.props);
-        // axios.get('https://my-react-burger-3d4d6.firebaseio.com/ingredients.json').then(response => {
-        //     this.setState({ingredients: response.data});
-        // }).catch(error => {
-        //     this.setState({error: true})
-        // });
+        axios.get('https://my-react-burger-3d4d6.firebaseio.com/ingredients.json').then(response => {
+            this.setState({ingredients: response.data});
+        }).catch(error => {
+            this.setState({error: true})
+        });
     }
 
     updatePurchaseState (ingredients) {
@@ -40,6 +40,7 @@ class BurgerBuilder extends Component {
         .reduce((sum, el) => {
             return sum + el;
         }, 0);
+        
         return sum > 0;
     }
 
