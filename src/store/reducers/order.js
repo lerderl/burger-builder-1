@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 orders: action.orders,
-                loading: true
+                loading: false
             };
 
         case actionTypes.FETCH_ORDERS_FAIL:
